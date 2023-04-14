@@ -1,0 +1,24 @@
+<%= form_with(model: @article, local: true)do |form|%>
+<div>
+  <% if @article.errors.any? %>
+  <h2> The following errors prevented the articles from saving</h2>
+  <ul>
+  <%@article.errors.each do|article|%>
+    <li><%=article.full_message%></li>
+    <%end%>
+  </ul>
+  <% end%>
+  </div>
+<div>
+  <%= form.label :title%>
+  <%= form.text_field :title, autofocus:true%>
+  </div>
+<div>
+  <%= form.label :description%>
+  <%= form.text_field :description, autofocus:true%>
+</div>
+
+<div>
+  <%= form.submit%>
+</div>
+<% end%>
