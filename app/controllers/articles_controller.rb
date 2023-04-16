@@ -15,6 +15,7 @@ before_action :set_articles, only: [:show, :edit, :update, :destroy]
   def create
     # @article = Article.new(title: params[:article][:title], description: params[:article][:description])
     @article = Article.new(create_params)
+    @article.user = User.first
     if @article.save!
       flash[:notice] = "Article was created succesfully"
       redirect_to articles_path
