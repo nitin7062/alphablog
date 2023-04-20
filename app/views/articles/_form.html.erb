@@ -9,6 +9,11 @@
   </ul>
   <% end%>
   </div>
+  <div>
+    <p>
+      created_by: <%=@article.user.username%>
+    </p>
+  </div>
 <div>
   <%= form.label :title%>
   <%= form.text_field :title, autofocus:true%>

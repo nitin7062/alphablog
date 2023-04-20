@@ -6,6 +6,7 @@
       <th> Title</th>
       <th> Description</th>
       <th> Actions</th>
+      <th> Created_by_user</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +18,7 @@
       <td><%= link_to 'delete', article, data:{turbo_method: :delete, turbo_confirm: "are you sure?"}%></td>
       <td><%= link_to 'edit' , edit_article_path(article) %></td>
       <td><%= link_to 'show' , article_path(article) %></td>
+      <td><%= article.user.username%></td>
     </tr>
     <%end%>
   </tbody>
